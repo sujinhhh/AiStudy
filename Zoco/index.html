@@ -59,13 +59,18 @@
       async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
-        if(prediction[0].className == "Sujin" && prediction[0].probability.toFixed(2) > 0.8){
-            labelContainer.childNodes[0].innerHTML = " 수진아 "
-        } else if (prediction[1].className == "Sujin" && prediction[1].probability.toFixed(2) > 0.8){
-            labelContainer.childNodes[1].innerHTML = " 수진아 "
-
+        if (
+          prediction[0].className == "Sujin" &&
+          prediction[0].probability.toFixed(2) > 0.8
+        ) {
+          labelContainer.childNodes[0].innerHTML = " 수진아 ";
+        } else if (
+          prediction[1].className == "Sujin" &&
+          prediction[1].probability.toFixed(2) > 0.8
+        ) {
+          labelContainer.childNodes[1].innerHTML = " 수진아 ";
         } else {
-            labelContainer.innerHTML = " 너 누구야 "
+          labelContainer.innerHTML = " 너 누구야 ";
         }
         // for (let i = 0; i < maxPredictions; i++) {
         //   const classPrediction =
@@ -73,7 +78,6 @@
         //     ": " +
         //     prediction[i].probability.toFixed(2);
         //   labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
       }
     </script>
   </body>
