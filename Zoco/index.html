@@ -60,12 +60,12 @@
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         if (
-          prediction[0].className == "Sujin" &&
+          prediction[0].className == "Myface" &&
           prediction[0].probability.toFixed(2) > 1.0
         ) {
           labelContainer.childNodes[0].innerHTML = " 수진아 ";
         } else if (
-          prediction[1].className == "Sujin" &&
+          prediction[1].className == "Seram" &&
           prediction[1].probability.toFixed(2) > 1.0
         ) {
           labelContainer.childNodes[0].innerHTML = " 새람아 ";
