@@ -61,16 +61,16 @@
         const prediction = await model.predict(webcam.canvas);
         if (
           prediction[0].className == "Sujin" &&
-          prediction[0].probability.toFixed(2) > 0.8
+          prediction[0].probability.toFixed(2) > 1.0
         ) {
           labelContainer.childNodes[0].innerHTML = " 수진아 ";
         } else if (
           prediction[1].className == "Sujin" &&
-          prediction[1].probability.toFixed(2) > 0.8
+          prediction[1].probability.toFixed(2) > 1.0
         ) {
-          labelContainer.childNodes[1].innerHTML = " 수진아 ";
+          labelContainer.childNodes[0].innerHTML = " 새람아 ";
         } else {
-          labelContainer.innerHTML = " 너 누구야 ";
+          labelContainer.childNodes[0].innerHTML = " 너 누구야 ";
         }
         // for (let i = 0; i < maxPredictions; i++) {
         //   const classPrediction =
