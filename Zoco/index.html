@@ -61,12 +61,12 @@
         const prediction = await model.predict(webcam.canvas);
         if (
           prediction[0].className == "Myface" &&
-          prediction[0].probability.toFixed(2) > 1.0
+          prediction[0].probability.toFixed(2) > 0.8
         ) {
           labelContainer.childNodes[0].innerHTML = " 수진아 ";
         } else if (
           prediction[1].className == "Seram" &&
-          prediction[1].probability.toFixed(2) > 1.0
+          prediction[1].probability.toFixed(2) > 0.8
         ) {
           labelContainer.childNodes[0].innerHTML = " 새람아 ";
         } else {
